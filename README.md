@@ -45,11 +45,9 @@ sudo make uninstall
 ```
 
 ## Usage
-To run the Neat algorithm, call the `neat` function as follows:
+To run the Neat algorithm, include `<neat/neat.h>` and call the `neat` function as follows:
 
 ```c
-#include <neat/neat.h>
-...
 network_t *model = neat(input_number, output_number, fitness_function, &fitness, log_path);
 ```
 Where:
@@ -65,7 +63,7 @@ Note that you do not need to specify the number of hidden neurons, as the algori
 ## Configuration
 
 The Neat algorithm can be configured using the `config_t` structure defined in `config.h`. The parameters can be accessed through the `neat_config` global variable. By default, the parameters are set to standard values. 
-To change the parameters, simply modify the values in the `neat_config` variable before calling the `neat` function, for example:
+To change the parameters, simply include `<neat/config.h>` and modify the values in the `neat_config` variable before calling the `neat` function, for example:
 ```c
 neat_config.population_size = 200;
 ```
